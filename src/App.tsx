@@ -420,16 +420,20 @@ function App() {
           <div className="screen screen-4">
             <h2 className="roboto-font">Gratis. Y disponible en</h2>
             <div className="download-for-non-mobile">
-              <img
-                src={DownloadAndroid}
-                alt="Descargar en Google Play"
-                className="download-button-non-mobile"
-              />
-              <img
-                src={DownloadiPhone}
-                alt="Descargar en App Store"
-                className="download-button-non-mobile"
-              />
+              <a href="https://play.google.com/store/apps/details?id=io.hackbank.app">
+                <img
+                  src={DownloadAndroid}
+                  alt="Descargar en Google Play"
+                  className="download-button-non-mobile"
+                />
+              </a>
+              <a href="https://apps.apple.com/us/app/hackbank/id1635247314">
+                <img
+                  src={DownloadiPhone}
+                  alt="Descargar en App Store"
+                  className="download-button-non-mobile"
+                />
+              </a>
             </div>
             <div className="download-for-mobile"></div>
           </div>
