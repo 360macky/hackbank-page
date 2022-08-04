@@ -424,6 +424,7 @@ function App() {
                 <img
                   src={DownloadAndroid}
                   alt="Descargar en Google Play"
+                  title="Descargar en Google Play"
                   className="download-button-non-mobile"
                 />
               </a>
@@ -431,6 +432,7 @@ function App() {
                 <img
                   src={DownloadiPhone}
                   alt="Descargar en App Store"
+                  title="Descargar en App Store"
                   className="download-button-non-mobile"
                 />
               </a>
