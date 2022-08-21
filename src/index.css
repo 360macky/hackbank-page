@@ -45,3 +45,9 @@ code {
 .font-black {
   font-weight: 700;
 }
+
+.video {
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+}

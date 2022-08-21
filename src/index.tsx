@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Privacy from "./Privacy";
 import Tutorial from "./Tutorial";
+import Dev from "./Dev";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/dev" element={<Dev />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
