@@ -162,6 +162,12 @@ const SectionWipesStyled = styled.div`
       transition-duration: 250ms;
       transition-timing-function: ease;
     }
+    .download-buttons-container {
+      flex-direction: row !important;
+    }
+    .custom-download-button {
+      padding: 1rem 1.5rem !important;
+    }
   }
 
   .screen-2 h2 {
@@ -329,6 +335,43 @@ const SectionWipesStyled = styled.div`
   .download-button-non-mobile:hover {
     transform: scale(1.1);
   }
+
+  .download-buttons-description {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background-color: black;
+  }
+
+  .download-buttons-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+    row-gap: 0.4rem;
+  }
+
+  .custom-download-button {
+    text-decoration: none;
+    padding: 0.5rem 1.8rem;
+    background-color: white;
+    color: #006c4b;
+    border: 0.2rem solid #6afcc3;
+    border-radius: 1rem;
+    box-shadow: 0px 0.8rem 1rem -0.1rem rgba(0,0,0,0.1);
+    transition-property: background-color color;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+  }
+
+  .custom-download-button:hover {
+    background-color: #6afcc3;
+    color: black;
+    transform: scale(1.1);
+  }
+  
+  .custom-download-button div {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
 `;
 
 function App() {
@@ -354,7 +397,22 @@ function App() {
               Una app que te permite simular
               <br /> una transferencia interbancaria.
             </h3>
-            {/* Botones de descarga */}
+            <div
+              className="inter-font text-white"
+              style={{ top: "72%" }}
+            >
+              <div className="download-buttons-container">
+                <a href="https://web.hackbank.app/" className="custom-download-button"
+                title="Versión Web"
+                ><div>💻 Web</div></a>
+                <a href="https://play.google.com/store/apps/details?id=io.hackbank.app" target={"_blank"} className="custom-download-button"
+                title="Instalar en Android" rel="noreferrer"
+                ><div>🤖 Android</div></a>
+                <a href="https://apps.apple.com/us/app/hackbank/id1635247314" target={"_blank"} className="custom-download-button"
+                title="Instalar en iPhone" rel="noreferrer"
+                ><div>🍎 iPhone</div></a>
+              </div>
+            </div>
           </div>
         </Scene>
         <Scene pin>
