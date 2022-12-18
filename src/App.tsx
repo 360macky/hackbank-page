@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./App.css";
 import styled from "styled-components";
 import { Controller, Scene } from "react-scrollmagic";
@@ -356,7 +357,7 @@ const SectionWipesStyled = styled.div`
     color: #006c4b;
     border: 0.2rem solid #6afcc3;
     border-radius: 1rem;
-    box-shadow: 0px 0.8rem 1rem -0.1rem rgba(0,0,0,0.1);
+    box-shadow: 0px 0.8rem 1rem -0.1rem rgba(0, 0, 0, 0.1);
     transition-property: background-color color;
     transition-duration: 250ms;
     transition-timing-function: ease;
@@ -367,7 +368,7 @@ const SectionWipesStyled = styled.div`
     color: black;
     transform: scale(1.1);
   }
-  
+
   .custom-download-button div {
     font-size: 1.2rem;
     font-weight: 800;
@@ -375,6 +376,13 @@ const SectionWipesStyled = styled.div`
 `;
 
 function App() {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    console.log(t("hello"));
+    return () => {};
+  }, [t]);
+
   return (
     <SectionWipesStyled>
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
@@ -388,38 +396,49 @@ function App() {
               Hackbank
             </h1>
             <h2 className="app-brief-description roboto-font text-white">
-              Antes de una enviar dinero. Seguridad.
+              {t("hero.title")}
             </h2>
             <h3
               className="app-description inter-font text-white"
               style={{ top: "55%" }}
             >
-              Una app que te permite simular
-              <br /> una transferencia interbancaria.
+              {t("hero.message.01")}
+              <br /> {t("hero.message.02")}
             </h3>
-            <div
-              className="inter-font text-white"
-              style={{ top: "72%" }}
-            >
+            <div className="inter-font text-white" style={{ top: "72%" }}>
               <div className="download-buttons-container">
-                <a href="https://web.hackbank.app/" className="custom-download-button"
-                title="Versión Web"
-                ><div>💻 Web</div></a>
-                <a href="https://play.google.com/store/apps/details?id=io.hackbank.app" target={"_blank"} className="custom-download-button"
-                title="Instalar en Android" rel="noreferrer"
-                ><div>🤖 Android</div></a>
-                <a href="https://apps.apple.com/us/app/hackbank/id1635247314" target={"_blank"} className="custom-download-button"
-                title="Instalar en iPhone" rel="noreferrer"
-                ><div>🍎 iPhone</div></a>
+                <a
+                  href="https://web.hackbank.app/"
+                  className="custom-download-button"
+                  title="Versión Web"
+                >
+                  <div>💻 Web</div>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=io.hackbank.app"
+                  target={"_blank"}
+                  className="custom-download-button"
+                  title="Instalar en Android"
+                  rel="noreferrer"
+                >
+                  <div>🤖 Android</div>
+                </a>
+                <a
+                  href="https://apps.apple.com/us/app/hackbank/id1635247314"
+                  target={"_blank"}
+                  className="custom-download-button"
+                  title="Instalar en iPhone"
+                  rel="noreferrer"
+                >
+                  <div>🍎 iPhone</div>
+                </a>
               </div>
             </div>
           </div>
         </Scene>
         <Scene pin>
           <div className="screen screen-2">
-            <h2 className="roboto-font">
-              Simula transferencias a través de los siguientes bancos
-            </h2>
+            <h2 className="roboto-font">{t("second.title")}</h2>
             <div className="bank-samples-container">
               <div className="bank-box">
                 <img src={BCP} alt="BCP" className="bank-logo" />
@@ -439,14 +458,16 @@ function App() {
         </Scene>
         <Scene pin>
           <div className="screen screen-3">
-            <h2 className="roboto-font">Te informará sobre</h2>
+            <h2 className="roboto-font">{t("third.title")}</h2>
             <div className="benefits-container">
               <div className="benefit-box">
                 <div className="benefit-box-symbol">
                   <p className="roboto-font font-bold">%+</p>
                 </div>
                 <div>
-                  <h3 className="roboto-font font-black">Comisiones</h3>
+                  <h3 className="roboto-font font-black">
+                    {t("third.box.01")}
+                  </h3>
                 </div>
               </div>
               <div className="benefit-box">
@@ -454,7 +475,9 @@ function App() {
                   <p className="roboto-font font-bold">S/</p>
                 </div>
                 <div>
-                  <h3 className="roboto-font font-black">Límites de dinero</h3>
+                  <h3 className="roboto-font font-black">
+                    {t("third.box.02")}
+                  </h3>
                 </div>
               </div>
               <div className="benefit-box">
@@ -462,21 +485,23 @@ function App() {
                   <p className="roboto-font font-bold">10:30</p>
                 </div>
                 <div>
-                  <h3 className="roboto-font font-black">Horas inoperativas</h3>
+                  <h3 className="roboto-font font-black">
+                    {t("third.box.03")}
+                  </h3>
                 </div>
               </div>
             </div>
             <h2 className="roboto-font">
-              desde el botón{" "}
+              {t("third.box.description")}{" "}
               <button className="predict-button mono-font font-black">
-                Predecir
+                {t("third.box.button")}
               </button>
             </h2>
           </div>
         </Scene>
         <Scene pin>
           <div className="screen screen-4">
-            <h2 className="roboto-font">Gratis. Y disponible en</h2>
+            <h2 className="roboto-font">{t("fourth.title")}</h2>
             <div className="download-for-non-mobile">
               <a
                 href="https://play.google.com/store/apps/details?id=io.hackbank.app"
