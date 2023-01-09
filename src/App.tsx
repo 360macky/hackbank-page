@@ -412,7 +412,7 @@ function App() {
                   className="custom-download-button"
                   title="Versión Web"
                 >
-                  <div>💻 Web</div>
+                  <div><span role={"img"}>💻</span> Web</div>
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=io.hackbank.app"
@@ -421,7 +421,7 @@ function App() {
                   title="Instalar en Android"
                   rel="noreferrer"
                 >
-                  <div>🤖 Android</div>
+                  <div><span role={"img"}>🤖</span> Android</div>
                 </a>
                 <a
                   href="https://apps.apple.com/us/app/hackbank/id1635247314"
@@ -430,7 +430,7 @@ function App() {
                   title="Instalar en iPhone"
                   rel="noreferrer"
                 >
-                  <div>🍎 iPhone</div>
+                  <div><span role={"img"}>🍎</span> iPhone</div>
                 </a>
               </div>
             </div>
