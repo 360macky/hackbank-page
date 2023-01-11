@@ -259,7 +259,7 @@ const SectionWipesStyled = styled.div`
   }
 
   .bank-logo {
-    height: 50px;
+    height: 3.6rem;
   }
 
   .connector {
@@ -379,6 +379,10 @@ const SectionWipesStyled = styled.div`
   .custom-download-button div {
     font-size: 1.2rem;
     font-weight: 800;
+  }
+
+  .smartphone-image {
+    animation: none;
   }
 `;
 
