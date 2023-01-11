@@ -25,7 +25,7 @@ const SectionWipesStyled = styled.div`
       transform: translate(0, 0px);
     }
     50% {
-      transform: translate(0, 15px) scale(1.2);
+      transform: translate(0, 15px) scale(1.1);
     }
     100% {
       transform: translate(0, 0px);
@@ -173,6 +173,13 @@ const SectionWipesStyled = styled.div`
     .custom-download-button {
       padding: 1rem 1.5rem !important;
     }
+    .app-buttons {
+      width: auto !important;
+    }
+  }
+
+  .app-buttons {
+    width: 80%;
   }
 
   .screen-2 h2 {
@@ -395,7 +402,7 @@ function App() {
           {t("hero.message.01")}
           <br /> {t("hero.message.02")}
         </h3>
-        <div className="inter-font text-white" style={{ top: "72%" }}>
+        <div className="app-buttons inter-font text-white" style={{ top: "72%" }}>
           <div className="download-buttons-container">
             <a
               href="https://web.hackbank.app/"
