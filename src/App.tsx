@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "./App.css";
 import styled from "styled-components";
-import { Controller, Scene } from "react-scrollmagic";
+
 import Connector from "./assets/X.svg";
 import BCP from "./assets/banks/BCP.png";
 import BBVA from "./assets/banks/BBVA.png";
@@ -21,7 +21,7 @@ const SectionWipesStyled = styled.div`
       transform: translate(0, 0px);
     }
     50% {
-      transform: translate(0, 15px) scale(1.5);
+      transform: translate(0, 15px) scale(1.2);
     }
     100% {
       transform: translate(0, 0px);
@@ -385,155 +385,142 @@ function App() {
 
   return (
     <SectionWipesStyled>
-      <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-        <Scene pin>
-          <div className="screen cover-screen">
-            <img src={Smartphone} alt="" className="smartphone-image" />
-            <h1
-              className="app-title roboto-font text-white"
-              style={{ top: "35%" }}
+      <div className="screen cover-screen">
+        <img src={Smartphone} alt="" className="smartphone-image" />
+        <h1 className="app-title roboto-font text-white" style={{ top: "35%" }}>
+          Hackbank
+        </h1>
+        <h2 className="app-brief-description roboto-font text-white">
+          {t("hero.title")}
+        </h2>
+        <h3
+          className="app-description inter-font text-white"
+          style={{ top: "55%" }}
+        >
+          {t("hero.message.01")}
+          <br /> {t("hero.message.02")}
+        </h3>
+        <div className="inter-font text-white" style={{ top: "72%" }}>
+          <div className="download-buttons-container">
+            <a
+              href="https://web.hackbank.app/"
+              className="custom-download-button"
+              title="Versión Web"
             >
-              Hackbank
-            </h1>
-            <h2 className="app-brief-description roboto-font text-white">
-              {t("hero.title")}
-            </h2>
-            <h3
-              className="app-description inter-font text-white"
-              style={{ top: "55%" }}
+              <div>
+                <span role={"img"}>💻</span> Web
+              </div>
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=io.hackbank.app"
+              target={"_blank"}
+              className="custom-download-button"
+              title="Instalar en Android"
+              rel="noreferrer"
             >
-              {t("hero.message.01")}
-              <br /> {t("hero.message.02")}
-            </h3>
-            <div className="inter-font text-white" style={{ top: "72%" }}>
-              <div className="download-buttons-container">
-                <a
-                  href="https://web.hackbank.app/"
-                  className="custom-download-button"
-                  title="Versión Web"
-                >
-                  <div><span role={"img"}>💻</span> Web</div>
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=io.hackbank.app"
-                  target={"_blank"}
-                  className="custom-download-button"
-                  title="Instalar en Android"
-                  rel="noreferrer"
-                >
-                  <div><span role={"img"}>🤖</span> Android</div>
-                </a>
-                <a
-                  href="https://apps.apple.com/us/app/hackbank/id1635247314"
-                  target={"_blank"}
-                  className="custom-download-button"
-                  title="Instalar en iPhone"
-                  rel="noreferrer"
-                >
-                  <div><span role={"img"}>🍎</span> iPhone</div>
-                </a>
+              <div>
+                <span role={"img"}>🤖</span> Android
               </div>
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/hackbank/id1635247314"
+              target={"_blank"}
+              className="custom-download-button"
+              title="Instalar en iPhone"
+              rel="noreferrer"
+            >
+              <div>
+                <span role={"img"}>🍎</span> iPhone
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="screen screen-2">
+        <h2 className="roboto-font">{t("second.title")}</h2>
+        <div className="bank-samples-container">
+          <div className="bank-box">
+            <img src={BCP} alt="BCP" className="bank-logo" />
+          </div>
+          <div className="bank-box">
+            <img src={Interbank} alt="Interbank" className="bank-logo" />
+          </div>
+          <div className="bank-box">
+            <img src={Scotiabank} alt="Scotiabank" className="bank-logo" />
+          </div>
+          <div className="bank-box">
+            <img src={BBVA} alt="BBVA" className="bank-logo" />
+          </div>
+          <img src={Connector} alt="" className="connector" />
+        </div>
+      </div>
+      <div className="screen screen-3">
+        <h2 className="roboto-font">{t("third.title")}</h2>
+        <div className="benefits-container">
+          <div className="benefit-box">
+            <div className="benefit-box-symbol">
+              <p className="roboto-font font-bold">%+</p>
+            </div>
+            <div>
+              <h3 className="roboto-font font-black">{t("third.box.01")}</h3>
             </div>
           </div>
-        </Scene>
-        <Scene pin>
-          <div className="screen screen-2">
-            <h2 className="roboto-font">{t("second.title")}</h2>
-            <div className="bank-samples-container">
-              <div className="bank-box">
-                <img src={BCP} alt="BCP" className="bank-logo" />
-              </div>
-              <div className="bank-box">
-                <img src={Interbank} alt="Interbank" className="bank-logo" />
-              </div>
-              <div className="bank-box">
-                <img src={Scotiabank} alt="Scotiabank" className="bank-logo" />
-              </div>
-              <div className="bank-box">
-                <img src={BBVA} alt="BBVA" className="bank-logo" />
-              </div>
-              <img src={Connector} alt="" className="connector" />
+          <div className="benefit-box">
+            <div className="benefit-box-symbol">
+              <p className="roboto-font font-bold">S/</p>
+            </div>
+            <div>
+              <h3 className="roboto-font font-black">{t("third.box.02")}</h3>
             </div>
           </div>
-        </Scene>
-        <Scene pin>
-          <div className="screen screen-3">
-            <h2 className="roboto-font">{t("third.title")}</h2>
-            <div className="benefits-container">
-              <div className="benefit-box">
-                <div className="benefit-box-symbol">
-                  <p className="roboto-font font-bold">%+</p>
-                </div>
-                <div>
-                  <h3 className="roboto-font font-black">
-                    {t("third.box.01")}
-                  </h3>
-                </div>
-              </div>
-              <div className="benefit-box">
-                <div className="benefit-box-symbol">
-                  <p className="roboto-font font-bold">S/</p>
-                </div>
-                <div>
-                  <h3 className="roboto-font font-black">
-                    {t("third.box.02")}
-                  </h3>
-                </div>
-              </div>
-              <div className="benefit-box">
-                <div className="benefit-box-symbol">
-                  <p className="roboto-font font-bold">10:30</p>
-                </div>
-                <div>
-                  <h3 className="roboto-font font-black">
-                    {t("third.box.03")}
-                  </h3>
-                </div>
-              </div>
+          <div className="benefit-box">
+            <div className="benefit-box-symbol">
+              <p className="roboto-font font-bold">10:30</p>
             </div>
-            <h2 className="roboto-font">
-              {t("third.box.description")}{" "}
-              <button className="predict-button mono-font font-black">
-                {t("third.box.button")}
-              </button>
-            </h2>
-          </div>
-        </Scene>
-        <Scene pin>
-          <div className="screen screen-4">
-            <h2 className="roboto-font">{t("fourth.title")}</h2>
-            <div className="download-for-non-mobile">
-              <a
-                href="https://play.google.com/store/apps/details?id=io.hackbank.app"
-                target="_blank"
-                rel="noreferrer"
-                title="Descargar en Google Play"
-              >
-                <img
-                  src={DownloadAndroid}
-                  alt="Descargar en Google Play"
-                  title="Descargar en Google Play"
-                  className="download-button-non-mobile"
-                />
-              </a>
-              <a
-                href="https://apps.apple.com/us/app/hackbank/id1635247314"
-                target="_blank"
-                rel="noreferrer"
-                title="Descargar en App Store"
-              >
-                <img
-                  src={DownloadiPhone}
-                  alt="Descargar en App Store"
-                  title="Descargar en App Store"
-                  className="download-button-non-mobile"
-                />
-              </a>
+            <div>
+              <h3 className="roboto-font font-black">{t("third.box.03")}</h3>
             </div>
-            <div className="download-for-mobile"></div>
           </div>
-        </Scene>
-      </Controller>
+        </div>
+        <h2 className="roboto-font">
+          {t("third.box.description")}{" "}
+          <button className="predict-button mono-font font-black">
+            {t("third.box.button")}
+          </button>
+        </h2>
+      </div>
+      <div className="screen screen-4">
+        <h2 className="roboto-font">{t("fourth.title")}</h2>
+        <div className="download-for-non-mobile">
+          <a
+            href="https://play.google.com/store/apps/details?id=io.hackbank.app"
+            target="_blank"
+            rel="noreferrer"
+            title="Descargar en Google Play"
+          >
+            <img
+              src={DownloadAndroid}
+              alt="Descargar en Google Play"
+              title="Descargar en Google Play"
+              className="download-button-non-mobile"
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/us/app/hackbank/id1635247314"
+            target="_blank"
+            rel="noreferrer"
+            title="Descargar en App Store"
+          >
+            <img
+              src={DownloadiPhone}
+              alt="Descargar en App Store"
+              title="Descargar en App Store"
+              className="download-button-non-mobile"
+            />
+          </a>
+        </div>
+        <div className="download-for-mobile"></div>
+      </div>
     </SectionWipesStyled>
   );
 }
