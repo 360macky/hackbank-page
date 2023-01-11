@@ -176,6 +176,12 @@ const SectionWipesStyled = styled.div`
     .app-buttons {
       width: auto !important;
     }
+    .app-brief-description {
+      display: flex !important;
+    }
+  }
+  .app-brief-description {
+    display: none;
   }
 
   .app-buttons {
@@ -284,9 +290,6 @@ const SectionWipesStyled = styled.div`
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 10px;
-  }
-
-  .benefit-box-symbol {
   }
 
   .benefit-box p,
