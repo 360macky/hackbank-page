@@ -265,6 +265,7 @@ const SectionWipesStyled = styled.div`
   }
 
   .bank-logo {
+    filter: grayscale(1);
     height: 3.6rem;
   }
 
