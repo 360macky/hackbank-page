@@ -12,6 +12,10 @@ import DownloadAndroid from "./assets/DownloadAndroid.png";
 import DownloadiPhone from "./assets/DownloadiPhone.png";
 import Smartphone from "./assets/smartphone.png";
 
+import Apple from "./assets/apple.svg";
+import Android from "./assets/android.svg";
+import Computer from "./assets/computer.svg";
+
 const SectionWipesStyled = styled.div`
   overflow: hidden;
 
@@ -175,20 +179,10 @@ const SectionWipesStyled = styled.div`
     padding: 1rem;
   }
 
-  .cover-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #6afcc3;
-    background: -webkit-linear-gradient(to top, #000000, #6afcc3);
-    background: linear-gradient(to top, #000000, #6afcc3);
-  }
-
   .cover-screen h1,
   .cover-screen h2,
   .cover-screen h3 {
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.6);
     padding: 6px 12px;
     margin: 6px;
@@ -363,10 +357,16 @@ const SectionWipesStyled = styled.div`
     transition-timing-function: ease;
   }
 
+  .custom-download-button div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4rem;
+  }
+
   .custom-download-button:hover {
     background-color: #6afcc3;
     color: black;
-    transform: scale(1.1);
   }
 
   .custom-download-button div {
@@ -378,15 +378,10 @@ const SectionWipesStyled = styled.div`
 function App() {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    console.log(t("hello"));
-    return () => {};
-  }, [t]);
-
   return (
     <SectionWipesStyled>
       <div className="screen cover-screen">
-        <img src={Smartphone} alt="" className="smartphone-image" />
+        <img src={Smartphone} alt="iPhone Hackbank Preview" className="smartphone-image" />
         <h1 className="app-title roboto-font text-white" style={{ top: "35%" }}>
           Hackbank
         </h1>
@@ -405,32 +400,32 @@ function App() {
             <a
               href="https://web.hackbank.app/"
               className="custom-download-button"
-              title="Versión Web"
             >
               <div>
-                <span role={"img"}>💻</span> Web
+                <img src={Computer} aria-hidden alt="" height={26} />
+                <span>Web</span>
               </div>
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=io.hackbank.app"
               target={"_blank"}
               className="custom-download-button"
-              title="Instalar en Android"
               rel="noreferrer"
             >
               <div>
-                <span role={"img"}>🤖</span> Android
+                <img src={Android} aria-hidden alt="" height={26} />
+                <span>Android</span>
               </div>
             </a>
             <a
               href="https://apps.apple.com/us/app/hackbank/id1635247314"
               target={"_blank"}
               className="custom-download-button"
-              title="Instalar en iPhone"
               rel="noreferrer"
             >
               <div>
-                <span role={"img"}>🍎</span> iPhone
+                <img src={Apple} aria-hidden alt="" height={26} />
+                <span>iPhone</span>
               </div>
             </a>
           </div>
@@ -484,7 +479,7 @@ function App() {
         </div>
         <h2 className="roboto-font">
           {t("third.box.description")}{" "}
-          <button className="predict-button mono-font font-black">
+          <button className="predict-button mono-font font-black" disabled>
             {t("third.box.button")}
           </button>
         </h2>
