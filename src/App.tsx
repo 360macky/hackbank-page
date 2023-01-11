@@ -61,7 +61,7 @@ const SectionWipesStyled = styled.div`
   }
 
   .screen {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     text-align: center;
   }
@@ -76,11 +76,11 @@ const SectionWipesStyled = styled.div`
     }
 
     .screen-2 h2 {
-      font-size: 2rem;
+      font-size: 2.6rem;
     }
 
     .screen-3 h2 {
-      font-size: 2rem;
+      font-size: 2.6rem;
     }
 
     .connector {
@@ -502,12 +502,12 @@ function App() {
             href="https://play.google.com/store/apps/details?id=io.hackbank.app"
             target="_blank"
             rel="noreferrer"
-            title="Descargar en Google Play"
+            title={t("download.android") as string}
           >
             <img
               src={DownloadAndroid}
-              alt="Descargar en Google Play"
-              title="Descargar en Google Play"
+              alt={t("download.android") as string}
+              title={t("download.android") as string}
               className="download-button-non-mobile"
             />
           </a>
@@ -515,12 +515,12 @@ function App() {
             href="https://apps.apple.com/us/app/hackbank/id1635247314"
             target="_blank"
             rel="noreferrer"
-            title="Descargar en App Store"
+            title={t("download.ios") as string}
           >
             <img
               src={DownloadiPhone}
-              alt="Descargar en App Store"
-              title="Descargar en App Store"
+              alt={t("download.ios") as string}
+              title={t("download.ios") as string}
               className="download-button-non-mobile"
             />
           </a>

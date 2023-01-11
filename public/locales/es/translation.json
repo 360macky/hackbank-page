@@ -9,5 +9,8 @@
   "third.box.03": "Horas inoperativas",
   "third.box.description": "Desde el botón",
   "third.box.button": "Predecir",
-  "fourth.title": "Gratis. Y disponible en"
+  "fourth.title": "Gratis. Y disponible en",
+  "download.ios": "Descargar en iPhone",
+  "download.android": "Descargar en Android",
+  "download.web": "Usar en la Web"
 }
